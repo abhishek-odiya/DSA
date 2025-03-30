@@ -41,11 +41,11 @@ public class check3rdBit {
         int pos = 1;
         int n = 5;  //0101 -> 0111 -> dec 7
 
-//        get_andBit(bit, n);
+//        get_andBit(bit, n);       //Get method
 
-//        set_orBit(pos, n);
+//        set_orBit(pos, n);        //Set method
 
-//        clear_andNot(pos,n);
+//        clear_andNot(pos,n);      //Clear method
 
 
         Scanner sc = new Scanner(System.in);
