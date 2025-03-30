@@ -1,7 +1,7 @@
 package DSA.Queue;
 
 
-// Queue using 2 stack
+// Queue using 2 stacks
 
 import java.util.Stack;
 
