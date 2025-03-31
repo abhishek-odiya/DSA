@@ -37,7 +37,7 @@ public class Sum_of_Kth_level {
 
 
     // Sum of Nodes at Kth Level
-    public static int sumOfk(Node root) {
+    public static int sumOfk(Node root, int k) {
 
         if(root == null) {
             return 0;
@@ -47,27 +47,42 @@ public class Sum_of_Kth_level {
         q.add(root);
         q.add(null);
 
+        int sum = 0;
+        int level = 1;
+
         while (!q.isEmpty()) {
 
             Node currNode = q.remove();
+
             if(currNode == null) {
                 System.out.println();
+
                 if(q.isEmpty()){
                     break;
                 }
                 else {
                     q.add(null);
+                    level++;
+                    if(level > k){
+                        break;
+                    }
                 }
             }
-
             else{
-                System.out.print(currNode.data);
+                if(level == k) {
+                    sum = sum + currNode.data;
+                    System.out.print(currNode.data + " ");
+                }
+
+                if(currNode.left != null) {
+                    q.add(currNode.left);
+                }
+                if(currNode.right != null) {
+                    q.add(currNode.right);
+                }
             }
-
         }
-
-return 0;
-
+        return sum;
     }
 
 
@@ -81,7 +96,7 @@ return 0;
         Node root = t.tree(node);
 //        System.out.println(root.data);
 
-//        System.out.println(sumOfk(root));
+        System.out.println(sumOfk(root, 3));
 
     }
 }
